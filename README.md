@@ -1,4 +1,10 @@
-This is a logger using [`co2mon.hpp`](https://github.com/estshorter/co2mon).
+CO2 and temperature logger using [`co2mon.hpp`](https://github.com/estshorter/co2mon).
+
+indicator:
+![indicators](https://raw.githubusercontent.com/estshorter/co2logger/images/display.png)
+
+graph on ambient:
+![ambient](https://raw.githubusercontent.com/estshorter/co2logger/images/ambient.png)
 
 ## How to build logger
 create `configs.json` in `./logger`.
@@ -28,4 +34,4 @@ cmake --build build --config Release
 ```
 ## Run logger
 Run `co2logger.exe`.
-This program sends sensor data every 30 seconds to [Ambient](https://ambidata.io/).
+This program sends sensor data every "reporting_cycle_seconds" seconds to [Ambient](https://ambidata.io/).
