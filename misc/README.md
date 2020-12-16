@@ -1,0 +1,4 @@
+- `98-co2mon.rules` -> `/etc/udev/rules.d`
+- `co2mini.service` -> `/etc/systemd/system/`
+- `index.html` -> `/var/www/html/`
+- `default` -> `/etc/nginx/site-enabled/`

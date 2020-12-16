@@ -1,0 +1,12 @@
+[submodule "include/co2mon"]
+	path = include/co2mon
+	url = https://github.com/estshorter/co2mon.git
+[submodule "include/cpp-httplib"]
+	path = include/cpp-httplib
+	url = https://github.com/yhirose/cpp-httplib.git
+[submodule "include/hidapi"]
+	path = include/hidapi
+	url = https://github.com/libusb/hidapi
+[submodule "include/json"]
+	path = include/json
+	url = https://github.com/nlohmann/json.git
