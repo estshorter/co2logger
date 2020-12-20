@@ -18,12 +18,13 @@ create `configs.json` in `./logger`.
 ```
 `channel_id` and `write_key` can be obtained from [Ambient](https://ambidata.io/).
 
+Debug build command:
 ``` sh
 cmake -B build -S .
 cmake --build build
 ```
 
-### release build (for gcc or clang)
+### release build (for gcc and clang)
 ``` sh
 cmake -DCMAKE_BUILD_TYPE=Release -B build -S . -GNinja
 cd build && sudo ninja install
