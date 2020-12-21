@@ -6,7 +6,7 @@
   <title>co2mini</title>
   <script defer src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@latest/css/bulma.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vue@next/dist/vue.global.prod.js"></script>
   <style>
     html,
     body {
@@ -61,22 +61,23 @@
 
 
 <script>
-  var app2 = new Vue({
-    el: '#app',
-    data: {
-      co2: {
-        value: null,
-        time: null,
-        updatedBefore: null,
-        diff: null,
-        color: "#23D160"
-      },
-      temperature: {
-        value: null,
-        time: null,
-        updatedBefore: null,
-        diff: null,
-      },
+  Vue.createApp({
+    data() {
+      return {
+        co2: {
+          value: null,
+          time: null,
+          updatedBefore: null,
+          diff: null,
+          color: "#23D160"
+        },
+        temperature: {
+          value: null,
+          time: null,
+          updatedBefore: null,
+          diff: null,
+        }
+      }
     },
     mounted: function () {
       this.getCo2MiniDataImpl();
@@ -147,7 +148,7 @@
         this.co2.updatedBefore = String(data.co2.time - currentTime).padStart(2, '-')
       }
     }
-  })
+  }).mount('#app')
 </script>
 
 </html>
