@@ -144,11 +144,9 @@ int main(int argc, char *argv[]) {
   }
 
   // std::cout << config.dump() << std::endl;
-  if (config["channel_id"] == nullptr || config["write_key"] == nullptr ||
-      config["monitoring_cycle_seconds"] == nullptr ||
-      config["reporting_cycle_seconds"] == nullptr ||
+  if (config["monitoring_cycle_seconds"] == nullptr ||
       config["port"] == nullptr) {
-    std::cerr << "contents of the json file is wrong" << std::endl;
+    std::cerr << "contents of the json file are wrong" << std::endl;
     return 1;
   }
 
@@ -157,7 +155,15 @@ int main(int argc, char *argv[]) {
         std::chrono::seconds(config["monitoring_cycle_seconds"]));
   });
   auto threadServer = std::thread([&] { server(config["port"]); });
-  if constexpr (logging_to_ambient)
+  if constexpr (logging_to_ambient) {
+    if (config["channel_id"] == nullptr || config["write_key"] == nullptr ||
+        config["reporting_cycle_seconds"] == nullptr) {
+      std::cerr << "contents of the json file for ambient are wrong"
+                << std::endl;
+      return 1;
+    }
+
     auto threadAmbient = std::thread([&] { loggingToAmbient(config); });
+  }
   threadMonitoring.join();
 }
