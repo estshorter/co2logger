@@ -3,7 +3,7 @@ CO2 and temperature logger using [`co2mon.hpp`](https://github.com/estshorter/co
 indicator:
 ![indicators](https://raw.githubusercontent.com/estshorter/co2logger/images/display.png)
 
-graph on ambient:
+graph on ambient (disabled by default):
 ![ambient](https://raw.githubusercontent.com/estshorter/co2logger/images/ambient.png)
 
 ## How to build logger
@@ -13,7 +13,8 @@ create `configs.json` in `./logger`.
     "channel_id": 12345,
     "write_key": "YOUR_KEY",
     "monitoring_cycle_seconds": 4,
-    "reporting_cycle_seconds": 30
+    "reporting_cycle_seconds": 30,
+    "port": 30864
 } 
 ```
 `channel_id` and `write_key` can be obtained from [Ambient](https://ambidata.io/).
