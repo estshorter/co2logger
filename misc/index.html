@@ -106,7 +106,7 @@
         return dateTime.toLocaleTimeString();
       },
       getCo2MiniData: function () {
-        setInterval(this.getCo2MiniDataImpl.bind(this), 1500);
+        setInterval(this.getCo2MiniDataImpl.bind(this), 4000);
       },
       updateCo2IconColor: function (value) {
         if (value >= 1500) {
