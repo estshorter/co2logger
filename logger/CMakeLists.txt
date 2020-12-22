@@ -12,7 +12,7 @@ endif()
 
 add_custom_command(TARGET co2logger POST_BUILD     
     COMMAND ${CMAKE_COMMAND} -E copy_if_different  
-         ${PROJECT_SOURCE_DIR}/logger/configs.json 
+         ${PROJECT_SOURCE_DIR}/misc/configs.json 
         $<TARGET_FILE_DIR:co2logger>)              
 
         
@@ -29,5 +29,7 @@ else()
 	    COMMAND ${CMAKE_COMMAND} -E copy_if_different  
 	        $<TARGET_FILE_DIR:hidapi>/libhidapi.so    
 	        $<TARGET_FILE_DIR:co2logger>)       
-	install(FILES ${PROJECT_SOURCE_DIR}/logger/configs.json DESTINATION "/etc/co2mon")
+	install(FILES ${PROJECT_SOURCE_DIR}/misc/configs.json DESTINATION "/etc/co2mon")
+	install(FILES ${PROJECT_SOURCE_DIR}/misc/98-co2mon.rules DESTINATION "/etc/udev/rules.d/")
+	install(FILES ${PROJECT_SOURCE_DIR}/misc/co2mini.service DESTINATION "/etc/systemd/system/")
 endif()
