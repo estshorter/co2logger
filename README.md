@@ -28,6 +28,7 @@ cmake --build build
 ### release build (for gcc and clang)
 ``` sh
 cmake -DCMAKE_BUILD_TYPE=Release -B build -S . -GNinja
+cmake --build build
 cd build && sudo ninja install
 ```
 ### release build (for MSVC)
