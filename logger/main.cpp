@@ -99,7 +99,7 @@ void loggingToAmbient(const nlohmann::json &config) {
         }
       } else {
         std::cerr << "error occurred while sending data: error code: "
-                  << res.error() << std::endl;
+                  << int(res.error()) << std::endl;
         err_cnt++;
       }
       // network error detected
