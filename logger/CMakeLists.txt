@@ -14,6 +14,7 @@ if(DOWNLOAD_DEPENDENCIES)
       LOG_INSTALL ON
 	)
 	target_include_directories(co2logger PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/json/src/json/include/)
+	add_dependencies(co2logger json)
 endif()
 
 
