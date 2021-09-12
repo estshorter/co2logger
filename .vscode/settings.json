@@ -1,4 +1,7 @@
 {
+    "terminal.integrated.commandsToSkipShell": [
+        "-workbench.action.terminal.focusFind"
+    ],
     "files.associations": {
         "cstdio": "cpp",
         "array": "cpp",

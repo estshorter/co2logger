@@ -21,13 +21,13 @@ create `configs.json` in `./logger`.
 
 Debug build command:
 ``` sh
-cmake -DCMAKE_BUILD_TYPE=Debug -B build -S .
+cmake -DCMAKE_BUILD_TYPE=Debug -B build
 cmake --build build
 ```
 
 ### release build (for gcc and clang)
 ``` sh
-cmake -DCMAKE_BUILD_TYPE=Release -B build -S . -GNinja
+cmake -DCMAKE_BUILD_TYPE=Release -B build -GNinja
 cmake --build build
 cd build && sudo ninja install
 ```

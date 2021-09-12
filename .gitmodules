@@ -7,6 +7,3 @@
 [submodule "include/hidapi"]
 	path = include/hidapi
 	url = https://github.com/libusb/hidapi
-[submodule "include/json"]
-	path = include/json
-	url = https://github.com/nlohmann/json.git
