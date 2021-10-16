@@ -55,7 +55,6 @@ server {
 			proxy_pass http://localhost:31906/;
 	}
 
-
 	# pass PHP scripts to FastCGI server
 	#
 	#location ~ \.php$ {
