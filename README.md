@@ -21,7 +21,7 @@ create `configs.json` in `./logger`.
 
 Debug build command:
 ``` sh
-cmake -DCMAKE_BUILD_TYPE=Debug -B build
+cmake -DCMAKE_BUILD_TYPE=Debug -B build -GNinja
 cmake --build build
 ```
 
